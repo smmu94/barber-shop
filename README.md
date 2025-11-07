@@ -1,46 +1,40 @@
-# Astro Starter Kit: Basics
+# Barbería Central Website
 
-```sh
-npm create astro@latest -- --template basics
-```
+A modern and elegant website for **Barbería Central**, designed to showcase services, gallery, testimonials, contact information, and allow customers to easily book appointments.
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+## 🛠️ Built With
+- **Astro** – Fast, content-focused web framework.
+- **TailwindCSS** – Utility-first responsive styling.
+- **JavaScript** – Component behavior and interactivity.
+- **Lucide Icons** – Clean, lightweight icon set.
 
-## 🚀 Project Structure
+## ✨ Features
+| Section | Description |
+|--------|-------------|
+| Hero | Intro section with brand identity. |
+| Services | List of services with descriptions and pricing. |
+| Gallery | Photo showcase of real cuts and work. |
+| About | Information about the barber shop and team. |
+| Testimonials | Customer reviews and ratings. |
+| Contact & Booking | Contact details, map location, and appointment button. |
 
-Inside of your Astro project, you'll see the following folders and files:
+## 📦 Installation and Setup
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/your-username/your-repo-name.git
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+3. Start the development server:
+   ```bash
+   npm run dev
+   ```
+4. Open the website in your browser:
+   ```bash
+   http://localhost:4321
+   ```
 
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src
-│   ├── assets
-│   │   └── astro.svg
-│   ├── components
-│   │   └── Welcome.astro
-│   ├── layouts
-│   │   └── Layout.astro
-│   └── pages
-│       └── index.astro
-└── package.json
-```
-
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
-
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+## 📝 Author
+**Stephanie Morales**  
+Frontend Developer
