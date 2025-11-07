@@ -1,0 +1,15 @@
+---
+import type { ServiceCardProps } from '../types/types';
+const { title, description, image, price } = Astro.props as ServiceCardProps;
+---
+
+<div class="p-4 rounded-md bg-night flex flex-col gap-3 w-xs cursor-pointer border-2 border-night hover:bg-smoky-black hover:border-gold transition-all duration-300">
+    <img src={image} alt={title} class="w-full h-48 object-cover rounded-lg" />
+    <div class="flex flex-col gap-2">
+        <div class="flex justify-between text-md">
+            <h2 class="text-light font-bold">{title}</h2>
+            <p class="text-gold font-bold">{price} €</p>
+        </div>
+        <p class="text-light text-sm">{description}</p>
+    </div>
+</div>

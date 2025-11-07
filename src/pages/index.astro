@@ -1,0 +1,119 @@
+---
+import { Icon } from 'astro-icon/components';
+import Button from '../components/Button.astro';
+import ContactForm from '../components/ContactForm.astro';
+import Hero from '../components/Hero.astro';
+import Navbar from '../components/Navbar.astro';
+import ServiceCard from '../components/ServiceCard.astro';
+import TestimonialCard from '../components/TestimonialCard.astro';
+import Layout from '../layouts/Layout.astro';
+import { galleryImages, infoFooter, services, testimonials } from './constants';
+---
+
+<Layout>
+	<Navbar />
+	<div class="pt-24 flex flex-col gap-20 items-center">
+		<Hero />
+		<section id="services" class="max-w-5xl w-full flex flex-col gap-6 scroll-mt-24">
+			<h2 class="text-2xl font-bold text-center text-light">Nuestros Servicios</h2>
+			<div class="flex flex-wrap justify-center gap-6">
+				{services.map(service => (
+					<ServiceCard 
+						key={service.id}
+						title={service.title} 
+						description={service.description}
+						image={`/src/assets/images/${service.image}`} 
+						price={service.price} 
+					/>
+				))}
+			</div>
+		</section>
+		<section id="photos" class="max-w-5xl w-full flex flex-col gap-6 scroll-mt-24">
+			<h2 class="text-2xl font-bold text-center text-light">Galería de Fotos</h2>
+			<div class="flex flex-wrap justify-center gap-6">
+				{galleryImages.map(image => (
+					<img
+					src={`/src/assets/images/${image}`}
+					alt="Galería de Barbería Central"
+					class="
+						w-xs rounded-lg aspect-square object-cover 
+						transition duration-300 opacity-65 hover:opacity-100 hover:scale-[1.03]
+						hover:brightness-110 cursor-pointer
+					"
+					/>
+				))}
+		</div>
+		</section>
+		<section id="about" class="max-w-5xl w-full flex flex-col md:flex-row gap-6 scroll-mt-24">
+			<img src="src/assets/images/barber-shop.jpg" alt="central-barber-shop" class="md:w-1/2 rounded-lg object-cover" />
+			<div class="flex flex-col gap-4 text-light">
+				<h2 class="text-2xl font-bold">Sobre Barbería Central</h2>
+				<p>En Barbería Central, ofrecemos una experiencia única de cuidado personal y estilo. Nuestro equipo de barberos expertos está dedicado a proporcionar servicios de alta calidad en un ambiente acogedor y profesional.</p>
+				<p>Desde cortes de cabello modernos hasta afeitados clásicos, nos aseguramos de que cada cliente salga satisfecho y con un look impecable. Ven y descubre por qué somos la elección preferida para el cuidado masculino en la ciudad.</p>
+				</p>
+			</div>
+		</section>
+		<section id="testimonials" class="max-w-5xl w-full flex flex-col gap-6 scroll-mt-24">
+			<h2 class="text-2xl font-bold text-center text-light">Lo que dicen nuestros clientes</h2>
+			<div class="flex flex-wrap justify-center gap-6">
+				{testimonials.map(testimonial => (
+					<TestimonialCard 
+						key={testimonial.id}
+						name={testimonial.name}
+						feedback={testimonial.feedback}
+						punctuation={testimonial.punctuation}
+					/>
+				))}
+			</div>
+		</section>
+		<section id="contact" class="max-w-5xl w-full flex flex-col gap-6 scroll-mt-24">
+			<h2 class="text-2xl text-center text-light font-bold">Contacto y Reservas</h2>
+			<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+				<div class="flex flex-col gap-4 text-light">
+					<p>¿Listo para un nuevo look? Contáctanos para reservar tu cita o para cualquier consulta que puedas tener. Estamos aquí para ayudarte a lucir y sentirte lo mejor posible.</p>
+					<p class="flex gap-4"><Icon name="lucide:phone" class="w-6 h-6 text-gold" /> +34 123 456 789</p>
+					<p class="flex gap-4"><Icon name="lucide:map-pin" class="w-6 h-6 text-gold" /> Calle Falsa 123, 28080 Madrid</p>
+					<iframe 
+						src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d194348.23509062038!2d-3.8446863345446602!3d40.43783679854663!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd422997800a3c81%3A0xc436dec1618c2269!2zTWFkcmlkLCBFc3Bhw7Fh!5e0!3m2!1ses-419!2sus!4v1762362259057!5m2!1ses-419!2sus"
+						class="w-full h-full border-0" 
+						allowfullscreen 
+						loading="lazy" 
+						referrerpolicy="no-referrer-when-downgrade">
+					</iframe>
+					<div class="flex justify-center">
+						<Button>Reservar Cita</Button>
+					</div>
+				</div>
+				<ContactForm />
+			</div>
+		</section>
+	</div>
+	<footer class="w-full py-6 border-t border-night text-light flex flex-col gap-6">
+		<div class="grid grid-cols-1 sm:grid-cols-3 text-center gap-6">
+			{infoFooter.map(section => (
+				<div class="flex flex-col gap-3">
+				<p class="font-semibold">{section.title}</p>
+				{section.isSocial ? (
+					<div class="flex justify-center gap-4">
+					{section.items.map(item => (
+						<a href={item.url} rel="noopener noreferrer">
+						<Icon name={item.icon} class="w-7 h-7 text-gold hover:text-white transition-colors" />
+						</a>
+					))}
+					</div>
+				) : (
+					section.items.map(item => (
+					<p class="text-sm flex items-center justify-center gap-2">
+						{item.icon && <Icon name={item.icon} class="w-5 h-5 text-gold" />}
+						{item.text}
+					</p>
+					))
+				)}
+				</div>
+			))}
+		</div>
+		<p class="text-sm text-center">
+			© {new Date().getFullYear()} Barbería Central. Todos los derechos reservados.
+		</p>
+	</footer>
+</Layout>

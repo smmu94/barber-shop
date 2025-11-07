@@ -1,0 +1,10 @@
+---
+const phone = "34123456789";
+const message = "Hola! Estoy interesad@ en su servicio.";
+const url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
+---
+<a href={url} rel="noopener noreferrer" class="bg-gold text-dark p-3 rounded-md font-semibold cursor-pointer w-fit">
+    <slot />
+</a>
+
+

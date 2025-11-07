@@ -1,0 +1,17 @@
+@import "tailwindcss";
+
+h1, h2, h3, h4, h5 {
+  font-family: 'Montserrat', sans-serif;
+}
+
+html {
+  font-family: 'Inter', sans-serif;
+}
+
+@theme {
+  --color-dark: #0a0a0a;
+  --color-gold: #d4af37;
+  --color-light: #f5f5f5;
+  --color-night: #161616;
+  --color-smoky-black: #1e1a0e;
+}

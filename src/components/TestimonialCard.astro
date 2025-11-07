@@ -1,0 +1,14 @@
+---
+import type { TestimonialProps } from '../types/types';
+const { punctuation, name, feedback } = Astro.props as TestimonialProps;
+---
+
+<div class="p-4 rounded-md bg-night flex flex-col gap-3 w-xs">
+    <div class="flex">
+        {Array.from({ length: punctuation }).map(() => (
+            <span class="text-gold text-2xl">★</span>
+        ))}
+    </div>
+    <p class="text-light text-sm italic">{feedback}</p>
+    <p class="text-light font-bold">{name}</p>
+</div>
